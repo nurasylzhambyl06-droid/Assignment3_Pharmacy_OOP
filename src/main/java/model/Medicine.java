@@ -1,6 +1,7 @@
 package model;
 
-public class Medicine extends BaseEntity {
+public class Medicine extends BaseEntity
+        implements Validatable, PricedItem {
 
     private double price;
 
@@ -21,7 +22,12 @@ public class Medicine extends BaseEntity {
 
     @Override
     public boolean isValid() {
-        return price > 0;
+        return price > 0 && name != null;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
     }
 }
 
