@@ -1,5 +1,8 @@
 package model;
 
+import model.interfaces.PricedItem;
+import model.interfaces.Validatable;
+
 public class Medicine extends BaseEntity
         implements Validatable, PricedItem {
 

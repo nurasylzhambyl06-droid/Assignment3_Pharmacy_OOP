@@ -1,8 +1,9 @@
 package exceptions;
 
-public class InvalidInputException extends Exception {
-    public InvalidInputException(String msg) {
+public class ResourceNotFoundException extends Exception {
+    public ResourceNotFoundException(String msg) {
         super(msg);
     }
 }
+
 
