@@ -27,10 +27,5 @@ public class Medicine extends BaseEntity
     public boolean isValid() {
         return price > 0 && name != null;
     }
-
-    @Override
-    public double getPrice() {
-        return price;
-    }
 }
 

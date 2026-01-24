@@ -1,12 +1,26 @@
 package org.example;
 
+import db.DatabaseConnection;
 import model.BaseEntity;
+import model.Medicine;
+import repository.PatientRepository;
 import service.MedicineService;
 import service.PatientService;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        try {
+            Connection con = DatabaseConnection.getConnection();
+            PatientRepository repo = new PatientRepository(con);
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+
 
         PatientService patientService = new PatientService();
         MedicineService medicineService = new MedicineService();

@@ -3,13 +3,24 @@ package repository;
 import db.DatabaseConnection;
 import model.Patient;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PatientRepository {
 
+    private Connection con;
+
+    public PatientRepository(Connection con) {
+        this.con = con;
+    }
     public List<Patient> getAll() throws SQLException {
+
         List<Patient> list = new ArrayList<>();
         Connection con = DatabaseConnection.getConnection();
         Statement st = con.createStatement();
