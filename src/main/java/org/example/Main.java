@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         try {
             Connection con = DatabaseConnection.getConnection();
@@ -39,6 +39,11 @@ public class Main {
         }
         BaseEntity entity = new Medicine(99, "TestMed", 100.0);
         System.out.println(entity.getInfo());
+
+        MedicineService service = new MedicineService();
+        Medicine m = service.getMostExpensiveMedicine();
+
+        System.out.println(m.getName() + " " + m.getPrice());
     }
 }
 

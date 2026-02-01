@@ -13,7 +13,7 @@ public class MedicineRepository {
         List<Medicine> list = new ArrayList<>();
         Connection con = DatabaseConnection.getConnection();
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("SELECT * FROM medicines");
+        ResultSet rs = st.executeQuery("SELECT * FROM medicines ");
 
         while (rs.next()) {
             list.add(new Medicine(

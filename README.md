@@ -28,7 +28,7 @@ The main goal of this assignment is to show:
 ---
 
 ## Technologies Used
-- **Java (JDK 17+)**
+- **Java (JDK 17 +)**
 - **PostgreSQL 16**
 - **JDBC (Java Database Connectivity)**
 - **Maven**

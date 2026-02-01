@@ -11,6 +11,16 @@ public class MedicineService {
 
     private MedicineRepository repo = new MedicineRepository();
 
+    public Medicine getMostExpensiveMedicine() throws SQLException {
+        List<Medicine> medicines = repo.getAll();
+        Medicine max = medicines.get(0);
+        for (Medicine m : medicines) {
+            if (m.getPrice() > max.getPrice()) {
+                max = m;
+            }
+        }
+        return max;
+    }
     public List<Medicine> getAllMedicines() throws DatabaseOperationException {
         try {
             return repo.getAll();
